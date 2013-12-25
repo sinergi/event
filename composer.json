@@ -1,0 +1,25 @@
+{
+    "name": "sinergi/dispatch",
+    "type": "library",
+    "description": "PHP event dispatching library",
+    "keywords": ["Event", "Disptach", "Handler", "Management"],
+    "homepage": "https://github.com/sinergi/dispatch",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gabriel Bull",
+            "email": "gavroche.bull@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.28"
+    },
+    "autoload": {
+        "psr-0" : {
+            "Dispatch" : "src/"
+        }
+    }
+}
