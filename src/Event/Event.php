@@ -1,5 +1,5 @@
 <?php
-namespace Dispatch;
+namespace Sinergi\Event;
 
 use Closure;
 use InvalidArgumentException;

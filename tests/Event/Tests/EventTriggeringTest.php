@@ -1,8 +1,8 @@
 <?php
-namespace Dispatch\Tests;
+namespace Sinergi\Event\Tests;
 
 use InvalidArgumentException;
-use Dispatch\Event;
+use Sinergi\Event\Event;
 use PHPUnit_Framework_TestCase;
 
 class EventTriggeringTest extends PHPUnit_Framework_TestCase
