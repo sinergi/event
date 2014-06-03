@@ -34,7 +34,7 @@ class MyListener implements ListenerInterface
 {
     public function onUpdate(Subject $subject)
     {
-        // to something
+        // do something
     }
 }
 ```
