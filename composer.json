@@ -1,7 +1,7 @@
 {
     "name": "sinergi/event",
     "description": "PHP event dispatching library",
-    "keywords": ["Event", "Disptach", "Handler", "Management"],
+    "keywords": ["event", "disptach", "handler", "management", "listener", "observer"],
     "license": "MIT",
     "authors": [
         {

@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/sinergi/event.svg)](https://travis-ci.org/sinergi/event)
 
-PHP event dispatching library.
+A smart PHP event dispatching library that does not require your listeners to be aware of your subjects.
 
 <a name="requirements"></a>
 ## Requirements
@@ -25,16 +25,41 @@ It is recommended that you install the Event library [through composer](http://g
 <a name="usage"></a>
 ## Usage
 
-Bind events:
+### Listener Example
 
 ```php
-Sinergi\Event\Event::on('event.name', function($argument) {
-    return strrev($argument);
-});
+use Sinergi\Event\ListenerInterface;
+
+class MyListener implements ListenerInterface
+{
+    public function onUpdate(Subject $subject)
+    {
+        // to something
+    }
+}
 ```
 
-Trigger events:
+### Add listener
 
 ```php
-Sinergi\Event\Event::trigger('event.name', ['my arguments']);
+use Sinergi\Event\Dispatcher;
+
+$dispatcher = new Dispatcher();
+$dispatcher->add(new MyListener());
+```
+
+### Trigger events
+
+```php
+class Subject
+{
+    const UPDATE_EVENT = 'update';
+
+    public $dispatcher;
+
+    public function update()
+    {
+        $dispatcher->trigger($this, self::UPDATE_EVENT);
+    }
+}
 ```
