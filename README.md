@@ -25,7 +25,7 @@ It is recommended that you install the Event library [through composer](http://g
 <a name="usage"></a>
 ## Usage
 
-### Listener Example
+### Listener example
 
 ```php
 use Sinergi\Event\ListenerInterface;
@@ -53,7 +53,7 @@ class Subject
 }
 ```
 
-### Add listener
+### Add listener to dispatcher
 
 ```php
 use Sinergi\Event\Dispatcher;
@@ -62,14 +62,9 @@ $dispatcher = new Dispatcher();
 $dispatcher->add(new MyListener());
 ```
 
-### Trigger events
+### Bind it all together
 
 ```php
-use Sinergi\Event\Dispatcher;
-
-$dispatcher = new Dispatcher();
-$dispatcher->add(new MyListener());
-
 $subject = new Subject();
 $subject->dispatcher = $dispatcher;
 $subject->update();
