@@ -39,6 +39,22 @@ class MyListener implements ListenerInterface
 }
 ```
 
+### Subject example
+
+```php
+class Subject
+{
+    const UPDATE_EVENT = 'update';
+
+    public $dispatcher;
+
+    public function update()
+    {
+        $this->dispatcher->trigger($this, self::UPDATE_EVENT);
+    }
+}
+```
+
 ### Add listener
 
 ```php
@@ -51,15 +67,12 @@ $dispatcher->add(new MyListener());
 ### Trigger events
 
 ```php
-class Subject
-{
-    const UPDATE_EVENT = 'update';
+use Sinergi\Event\Dispatcher;
 
-    public $dispatcher;
+$dispatcher = new Dispatcher();
+$dispatcher->add(new MyListener());
 
-    public function update()
-    {
-        $dispatcher->trigger($this, self::UPDATE_EVENT);
-    }
-}
+$subject = new Subject();
+$subject->dispatcher = $dispatcher;
+$subject->update();
 ```
