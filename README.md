@@ -44,13 +44,11 @@ class MyListener implements ListenerInterface
 ```php
 class Subject
 {
-    const UPDATE_EVENT = 'update';
-
     public $dispatcher;
 
     public function update()
     {
-        $this->dispatcher->trigger($this, self::UPDATE_EVENT);
+        $this->dispatcher->trigger($this, 'update');
     }
 }
 ```
